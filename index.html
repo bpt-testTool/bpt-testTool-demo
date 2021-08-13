@@ -71,71 +71,20 @@
         <h1> <span>Alliance Program A/V peripheral test tool</span> </h1>
         <div x-data="{ openTab: 1 }">
             <ul class="tab-menu">
-                <li @click="openTab = 1" class="active">
-                    <a href="#">Tester info</a>
-                </li>
-
-                <li @click="openTab = 2">
+                <li @click="openTab = 1">
                     <a href="#">Camera PTZ test</a>
                 </li>
 
-                <li @click="openTab = 3">
+                <li @click="openTab = 2">
                     <a href="#">Resolution checking</a>
                 </li>
 
-                <li @click="openTab = 4">
+                <li @click="openTab = 3">
                     <a href="#">Audio Test</a>
-                </li>
-
-                <li @click="openTab = 5">
-                    <a href="#">Submit</a>
                 </li>
             </ul>
             <div class="w-full pt-4">
                 <div x-show="openTab === 1">
-                    <h1> <span>Tester info</span> </h1>
-                    Name：<input type="text" name="Tester_name"><br> Email：
-                    <input type="text" name="Tester_email"><br> Company Name：<input type="text" name="Tester_company_name"><br><br>
-
-                    <h1> <span>Peripheral info</span> </h1>
-                    Brand Name：<input type="text" name="Tester_brand"><br> Product Name：<input type="text" id="Product_Name"><br> Serial Number：<input type="text" id="Serial_Number"><br> Firmware Version：<input type="text" name="Tester_firmware_version"><br>
-
-                    <div>
-                        <input type="radio" id="peripheral_info_firmware_Camera" name="peripheral_info_firmware" value="Camera">
-                        <label for="Choice1">Camera</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="peripheral_info_firmware_Speakerphone" name="peripheral_info_firmware" value="Speakerphone">
-                        <label for="Choice2">Speakerphone</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="peripheral_info_firmware_DSP/Adapter" name="peripheral_info_firmware" value="DSP/Adapter">
-                        <label for="Choice3">DSP/Adapter</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="peripheral_info_firmware_Speaker_with_camera" name="peripheral_info_firmware" value="Speaker with integrated camera">
-                        <label style="width: auto;" for="Choice4">Speaker with integrated camera</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="peripheral_info_firmware_Touch_Display" name="peripheral_info_firmware" value="Touch Display">
-                        <label for="Choice5">Touch Display</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="peripheral_info_firmware_Windows_Collab_Display" name="peripheral_info_firmware" value="Windows Collab Display">
-                        <label for="Choice6">Windows Collab Display</label>
-                    </div><br><br>
-
-                    <h1> <span>CX info</span> </h1>
-                    CX IP address：<input type="text" name="Tester_CX_ip"><br> CX Type：<input type="text" id="Tester_CX_type"><br> CX Serial：<input type="text" id="Tester_CX_serial"><br> CX Firmware：<input type="text" name="Tester_CX_firmware">
-                    <br><br>
-                </div>
-
-                <div x-show="openTab === 2">
                     <h1> <span>Camera PTZ test</span> </h1>
                     <div class="select">
                         <label for="audioSource" style="display: none;">Audio input source: </label><select id="audioSource" style="display: none;"></select>
@@ -196,7 +145,7 @@
                     </div>
                 </div>
 
-                <div x-show="openTab === 3">
+                <div x-show="openTab === 2">
                     <h1> <span>Resolution checking</span> </h1>
                     <div id="container">
                         <div class="row">
@@ -234,7 +183,7 @@
                     </div>
                 </div>
 
-                <div x-show="openTab === 4">
+                <div x-show="openTab === 3">
                     <h1> <span>Audio Test</span> </h1>
 
                     <section class="main-controls">
@@ -261,11 +210,6 @@
                         <label><input type="checkbox" name="video_test_ptz_check" value="PTZ control working">YES</label>
                         <label><input type="checkbox" name="video_test_ptz_check" value="PTZ control working">NO</label>
                     </div>
-                </div>
-
-                <div x-show="openTab === 5">
-                    <h1> <span>Submit</span> </h1>
-                    <input type="button" value="Submit" style="width:120px;height:40px;font-size:20px;">
                 </div>
             </div>
         </div>
@@ -308,5 +252,3 @@
 </body>
 
 </html>
-<!-- https://barco-alliance-program.github.io/src/content/devices/barco_test_tool/test_tool_tag_alpine.html -->
-<!-- https://127.0.0.1/samples-gh-pages/src/content/devices/barco_test_tool/test_tool_tag_alpine.html# -->
