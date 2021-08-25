@@ -86,9 +86,6 @@
             <div class="w-full pt-4">
                 <div x-show="openTab === 1">
                     <h1> <span>Camera PTZ test</span> </h1>
-                    <div class="select">
-                        <label for="audioSource" style="display: none;">Audio input source: </label><select id="audioSource" style="display: none;"></select>
-                    </div>
                     <br>
                     <div class="select">
                         <label for="audioOutput" style="display: none;">Audio output destination: </label><select id="audioOutput" style="display: none;"></select>
@@ -111,7 +108,7 @@
                         <button name="pan_decrease"> left </button>
                         <input name="pan" type="range" disabled>
                     </div>
-                    
+
                     <div>
                         <div class="label">Tilt:</div>
                         <button name="tilt_increase"> up </button>
@@ -168,7 +165,9 @@
 
                 <div x-show="openTab === 3">
                     <h1> <span>Audio Test</span> </h1>
-
+                    <div class="select">
+                        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+                    </div>
                     <section class="main-controls">
                         <canvas class="visualizer" height="60px"></canvas>
                         <div id="buttons">
@@ -190,13 +189,12 @@
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="js/resolutionScan_test.js"></script>
 
-    <!-- video test -->
-    <script src="js/main.js" async></script>
     <!-- camera PTZ control -->
     <script src="js/main2.js"></script>
 
-    <!-- microphone vidualization -->
-    <script src="js/app.js"></script>
+    <!-- video test + microphone vidualization -->
+    <script src="js/combine_main&app.js"></script>
+
     <script>
         let githubURL = new URL(document.URL);
         console.log(githubURL.href);
