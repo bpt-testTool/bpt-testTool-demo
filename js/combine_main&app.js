@@ -283,6 +283,17 @@ function visualize(stream) {
     }
 }
 
+$('button').click(function() {
+    if (this.innerHTML === "Stop stream") {
+        console.log("ochhhhhh");
+        window.stream.getTracks().forEach(track => {
+            console.log(track)
+            track.stop();
+        });
+        console.log("stream release finish");
+    }
+});
+
 window.onresize = function() {
     canvas.width = mainSection.offsetWidth;
 }

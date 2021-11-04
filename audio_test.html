@@ -70,7 +70,7 @@
         <h1> <span>Alliance Program A/V peripheral test tool</span> </h1>
         <div x-data="{ openTab: 1 }">
             <ul class="tab-menu">
-                <li @click="openTab = 1" class="active">
+                <li @click="openTab = 2">
                     <a href="#">Camera PTZ test</a>
                 </li>
 
@@ -78,12 +78,30 @@
                     <a href="./resu_check.html">Resolution checking</a>
                 </li>
 
-                <li @click="openTab = 2">
+                <li @click="openTab = 1" class="active">
                     <a href="#">Audio Test</a>
                 </li>
             </ul>
             <div class="w-full pt-4">
                 <div x-show="openTab === 1">
+                    <h1> <span>Audio Test</span> </h1>
+                    <div class="select">
+                        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+                    </div>
+                    <section class="main-controls">
+                        <canvas class="visualizer" height="60px"></canvas>
+                        <div id="buttons">
+                            <button class="record">Record</button>
+                            <button class="stop">Stop</button>
+                        </div>
+                    </section>
+
+                    <section class="sound-clips">
+
+                    </section>
+                </div>
+
+                <div x-show="openTab === 2">
                     <h1> <span>Camera PTZ test</span> </h1>
                     <br>
                     <div class="select">
@@ -123,24 +141,6 @@
                         <input name="zoom" type="range" disabled>
                     </div>
 
-                </div>
-
-                <div x-show="openTab === 2">
-                    <h1> <span>Audio Test</span> </h1>
-                    <div class="select">
-                        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
-                    </div>
-                    <section class="main-controls">
-                        <canvas class="visualizer" height="60px"></canvas>
-                        <div id="buttons">
-                            <button class="record">Record</button>
-                            <button class="stop">Stop</button>
-                        </div>
-                    </section>
-
-                    <section class="sound-clips">
-
-                    </section>
                 </div>
             </div>
         </div>

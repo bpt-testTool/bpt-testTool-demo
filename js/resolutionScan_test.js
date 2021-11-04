@@ -86,7 +86,6 @@ $(document).ready(() => {
 
 //Start scan by controlling the quick and full scan buttons
 $('button').click(function() {
-
     //setup for a quick scan using the hand-built quickScan object
     if (this.innerHTML === "Quick Scan") {
         console.log("Quick scan");
@@ -100,6 +99,15 @@ $('button').click(function() {
         tests = createAllResolutions(parseInt(lowRes), parseInt(highRes));
     } else {
         return
+    }
+
+    // release streams
+    if (window.stream) {
+        window.stream.getTracks().forEach(track => {
+            console.log(track)
+            track.stop();
+        });
+        console.log("stream release finish");
     }
 
     scanning = true;
